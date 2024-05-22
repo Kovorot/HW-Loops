@@ -37,10 +37,10 @@ public class Main {
                 if (y % 100 == 0) {
 
                     if (y % 400 == 0) {
-                        System.out.println(y);
+                        System.out.println(y + " год является високосным");
                     }
                 } else {
-                    System.out.println(y);
+                    System.out.println(y + " год является високосным");
                 }
             }
         }
