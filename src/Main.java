@@ -2,7 +2,8 @@ public class Main {
 
     public static void main(String[] args) {
 
-         //Задача 1
+        //region Циклы - задание 1
+        //Задача 1
         for (int i = 1; i < 11; i++) {
             System.out.println(i);
         }
@@ -85,5 +86,108 @@ public class Main {
             System.out.println("2 * " + i + " = " + 2 * i);
         }
         System.out.println();
+        //endregion
+
+        //region Циклы - задание 2
+        //Задача 1
+        double sum = 0;
+        int months = 0;
+        accSum = 15000;
+
+        while (sum < 2_459_000) {
+            sum += accSum;
+            sum += (sum / 100);
+            months++;
+            System.out.println("Месяц " + months + ", сумма накоплений равна " + sum + " рублей");
+        }
+        System.out.println();
+
+        //Задача 2
+        int i = 0;
+
+        while (i < 10) {
+            i++;
+            System.out.print(i + " ");
+        }
+        System.out.println();
+
+        for (;i > 0; i--) {
+            System.out.print(i + " ");
+        }
+        System.out.println();
+        System.out.println();
+
+        //Задача 3
+        int currentCountryPopulation = 12_000_000;
+        byte birthRatePer1000 = 17;
+        byte mortalityPer1000 = 8;
+
+        for (int y = 1; y < 11; y++) {
+            int countPoints = currentCountryPopulation / 1000; //Люди не могут быть дробью, поэтому округлим
+            int newborns = countPoints * birthRatePer1000;
+            int dead = countPoints * mortalityPer1000;
+            currentCountryPopulation += (newborns - dead);
+            System.out.println("Год " + y + ", численность населения составляет " + currentCountryPopulation);
+        }
+        System.out.println();
+
+        //Задача 4 (не уверен насчет данного решения)
+        sum = 15000;
+        months = 0;
+        double interestOfDeposit = (double) 7 / 100;
+
+        while (sum < 12_000_000) {
+            sum += (sum * interestOfDeposit);
+            months++;
+            System.out.println("Месясц - " + months + ", сумма накоплений " + sum);
+        }
+        System.out.println();
+
+        //Задача 5
+        sum = 15000;
+        months = 0;
+
+        while (sum < 12_000_000) {
+            sum += (sum * interestOfDeposit);
+            months++;
+
+            if (months % 6 == 0) {
+                System.out.println("Месясц - " + months + ", сумма накоплений " + sum);
+            }
+        }
+        System.out.println();
+
+        //Задача 7
+        int nextFriday = 3;
+        int day = 0;
+
+        while (day <= 31) {
+            day++;
+
+            if (day == nextFriday) {
+                System.out.println("Сегодня пятница, " + day + "-е число. Необходимо подготовить отчет.");
+                nextFriday += 7;
+            }
+        }
+        System.out.println();
+
+        //Задача 8
+        int year = 0;
+        int cometPeriod = 79;
+        int yearBefore = 2024 - 200;
+        int yearAfter = 2024 + 100;
+
+        while (year <= yearAfter) {
+            year += cometPeriod;
+
+            if (year >= yearBefore) {
+                System.out.println(year);
+
+                if (year > 2024) {
+                    break;
+                }
+            }
+        }
+        //endregion
     }
 }
